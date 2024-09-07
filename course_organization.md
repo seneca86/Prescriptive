@@ -2,11 +2,27 @@
 
 ## Instructor Information
 **Professor:** Javier Cerezo Lafuente  
-**Email:** [jcerezo@faculty.ie.edu](mailto:jcerezo@faculty.ie.edu)  
+
+**Email:** [jcerezo@faculty.ie.edu](mailto:jcerezo@faculty.ie.edu)
+
 **LinkedIn:** [profile](https://www.linkedin.com/in/cerezolafuente/)
+
 **Office Hours:** Available by request. Please contact via email.  
+
 **WhatsApp:** +*** ** ** **
+
 **In-person or Zoom:** Available after class or before class upon request.
+
+A summary of my professional background:
+
+- **Director of Data Science, Novartis**: Led teams on GenAI systems, evaluated LLMs, and developed financial forecasting tools for $40bn in sales and $13bn in costs.
+- **Adjunct Professor, IE Business School**: Designed and taught advanced analytics courses in programming, AI/ML, and prescriptive analytics.
+- **Senior Product Manager, Amazon**: Achieved double-digit growth in consumer electronics, overseeing a €200MM topline for the Home Entertainment category in Spain and Italy.
+- **Senior Associate, McKinsey & Company**: Managed strategy projects in Latin America, increasing mining output and TV revenue through ML models.
+- **Airbus Senior Engineer**: Co-developed software for the A400M aircraft program and transferred flight physics engineering activities from Germany to Spain.
+- **MBA, University of Chicago Booth**: Graduated with honors and awarded prestigious scholarships; GMAT 760 (99th percentile).
+- **Technical Skills**: Python, R, SQL, AWS, cloud computing, and machine learning with a strong background in data science and engineering.
+- **Languages**: Fluent in Spanish, English (TOEFL 117/120), and German (C1 level); member of Mensa International.
 
 ## Subject Overview
 This course focuses on **prescriptive analytics**, expanding upon the foundation laid in **Data Analytics for Managers**. Students will delve deeper into decision-making under resource constraints and risk assessment, with a particular focus on **optimization** and **simulation** techniques.
