@@ -65,6 +65,10 @@ We will focus on the first two points, although there will be elements of all fo
 
 ## Optimization
 
+### The lagrange multipliers
+
+![Lagrange multipliers](lagrange.png)
+
 ### A mathematical formulation
 
 ![Formulation of linear programming](simplex.png)
