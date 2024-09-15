@@ -63,25 +63,8 @@ We will focus on the first two points, although there will be elements of all fo
 > — George E. P. Box
 
 
-## Optimization
-
-### The lagrange multipliers
-
-![Lagrange multipliers](lagrange.png)
-
-### A mathematical formulation
-
-![Formulation of linear programming](simplex.png)
-![Illustration of linear programming](simplex_boundaries.png)
-
 ### Key elements:
 
 * **The target variable**: maximize profit, minimize cost, etc.
 
 * **Risks/Constraints**: Budget limitations, inaccurate forecasting, increased uncertainty with more risk/constraints.
-
----
-
-## Red Brand Canners Case
-
----
