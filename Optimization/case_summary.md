@@ -352,7 +352,7 @@ $\text{Contr}_{TP} = 222 \times (X_{AP} + X_{BP})$
 - **Tomato Juice**: $X_{BJ}$
 - **Tomato Paste**: $X_{BP}$
 
-### What is RBC’s objective?
+### What is RBC's objective?
 
 $\text{Contribution} = \text{Contr}_{WT} + \text{Contr}_{TJ} + \text{Contr}_{TP} - \text{FruitCost}_{\Delta A}$
 
@@ -372,7 +372,7 @@ $\text{Contr}_{TP} = 222 \times (\Delta X_{AP} + X_{AP} + X_{BP})$
 
 $\text{FruitCost}_{\Delta A+} = 255 \times (\Delta X_{AW} + \Delta X_{AJ} + \Delta X_{AP})$
 
-## Constraints with the additional tomatoes
+### Constraints with the additional tomatoes
 
 - **Total Grade A and B tomato crop used** should be less than or equal to the available supply:
 
@@ -384,20 +384,44 @@ $\text{FruitCost}_{\Delta A+} = 255 \times (\Delta X_{AW} + \Delta X_{AJ} + \Del
 
 - **Total production of each product type** should be less than or equal to the demand for it:
 
-  $X_{AW} + X_{BW} \leq 18 \times 800K = 14,400K$
+  $\Delta X_{AW}$ + $X_{AW} + X_{BW} \leq 18 \times 800K = 14,400K$
 
-  $X_{AJ} + X_{BJ} \leq 20 \times 50K = 1,000K$
+  $\Delta X_{AJ}$ + $X_{AJ} + X_{BJ} \leq 20 \times 50K = 1,000K$
 
-  $X_{AP} + X_{BP} \leq 25 \times 80K = 2,000K$
+  $\Delta X_{AP}$ + $X_{AP} + X_{BP} \leq 25 \times 80K = 2,000K$
 
 - **Weighted average of quality points** for each tomato product should be greater than or equal to the quality requirement for it:
 
-  $9 \times X_{AW} + 5 \times X_{BW} \geq 8 \times (X_{AW} + X_{BW})$
+  $9 \times (\Delta X_{AW} + X_{AW}) + 5 \times X_{BW} \geq 8 \times (X_{AW} + X_{BW})$
 
-  $9 \times X_{AJ} + 5 \times X_{BJ} \geq 6 \times (X_{AJ} + X_{BJ})$
+  $9 \times (\Delta X_{AJ} + X_{AJ}) + 5 \times X_{BJ} \geq 6 \times (X_{AJ} + X_{BJ})$
 
-  $9 \times X_{AP} + 5 \times X_{BP} \geq 5 \times (X_{AP} + X_{BP})$
+  $9 \times (\Delta X_{AP} + X_{AP}) + 5 \times X_{BP} \geq 5 \times (X_{AP} + X_{BP})$
 
 - **Production must be nonnegative**:
 
-  $X_{AW}, X_{AJ}, X_{AP}, X_{BW}, X_{BJ}, X_{BP} \geq 0$
+$\Delta X_{AW}$, $\Delta X_{AJ}$, $\Delta X_{AP}$, $X_{AW}, X_{AJ}, X_{AP}, X_{BW}, X_{BJ}, X_{BP} \geq 0$
+
+### Using Excel Solver
+
+![Model with additional tomatoes](additional_tomatoes_model.png)
+
+![Excel view of additional tomatoes](additional_tomatoes_excel.png)
+
+![Excel solution with additional tomatoes](additional_tomatoes_solution.png)
+
+### Summary of Solutions
+
+| Solution            | Tomato Type | Whole Tomato (pounds) | Tomato Juice (pounds) | Tomato Paste (pounds) | Profit    |
+|---------------------|-------------|-----------------------|-----------------------|-----------------------|-----------|
+| **Tucker’s Solution**  | Grade A     | 600K                 | 0                     | 0                     | $641,600  |
+|                     | Grade B     | 200K                 | 0                     | 2,000K                |           |
+| **Myer’s Solution**    | Grade A     | 0                    | 600K                  | 0                     | $642,000  |
+|                     | Grade B     | 0                    | 400K                  | 2,000K                |           |
+| **Optimal Solution**  | Grade A     | 525K                 | 75K                   | 0                     | $676,300  |
+|                     | Grade B     | 175K                 | 225K                  | 2,000K                |           |
+| **Additional Tomatoes** | Grade A (extra)    | 80K                  | 0                     | 0                     |           |
+|                     | Grade A     | 535K                 | 65K                   | 0                     | $677,620  |
+|                     | Grade B     | 205K                 | 195K                  | 2,000K                |           |
+
+**Note**: Increases contribution by 0.2%.
