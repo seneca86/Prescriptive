@@ -322,7 +322,7 @@ $\text{Contr}_{TP} = 222 \times (X_{AP} + X_{BP})$
 
   ![Model in Open Solver](open_solver_model_window.png)
 
-  # Summary of Solutions
+  ## Summary of Solutions
 
 | Solution         | Tomato Type | Whole Tomato (pounds) | Tomato Juice (pounds) | Tomato Paste (pounds) | Contribution |
 |------------------|-------------|-----------------------|-----------------------|-----------------------|--------------|
@@ -335,3 +335,69 @@ $\text{Contr}_{TP} = 222 \times (X_{AP} + X_{BP})$
 
 
 **Note**: The **Optimal Solution** improves contribution by 5%.
+
+
+## Additional tomatoes $\Delta A$
+
+
+### Grade A Tomatoes ($X_A$)
+
+- **Whole Tomatoes**: $X_{AW}$ + $\Delta X_{AW}$
+- **Tomato Juice**: $X_{AJ}$+ $\Delta X_{AJ}$
+- **Tomato Paste**: $X_{AP}$ + $\Delta X_{AP}$
+
+### Grade B Tomatoes ($X_B$)
+
+- **Whole Tomatoes**: $X_{BW}$
+- **Tomato Juice**: $X_{BJ}$
+- **Tomato Paste**: $X_{BP}$
+
+### What is RBC’s objective?
+
+$\text{Contribution} = \text{Contr}_{WT} + \text{Contr}_{TJ} + \text{Contr}_{TP} - \text{FruitCost}_{\Delta A}$
+
+- **$Contr_{WT}$** (Whole Tomatoes Contribution):
+
+$\text{Contr}_{WT} = 247 \times (\Delta X_{AW} + X_{AW} + X_{BW})$
+  
+- **$Contr_{TJ}$** (Tomato Juice Contribution):
+
+$\text{Contr}_{TJ} = 198 \times (\Delta X_{AJ} + X_{AJ} + X_{BJ})$
+
+- **$Contr_{TP}$** (Tomato Paste Contribution):
+
+$\text{Contr}_{TP} = 222 \times (\Delta X_{AP} + X_{AP} + X_{BP})$
+
+- **FruitCostA+**:
+
+$\text{FruitCost}_{\Delta A+} = 255 \times (\Delta X_{AW} + \Delta X_{AJ} + \Delta X_{AP})$
+
+## Constraints with the additional tomatoes
+
+- **Total Grade A and B tomato crop used** should be less than or equal to the available supply:
+
+  $\Delta X_{AW} + \Delta X_{AJ} + \Delta X_{AP} \leq 80K$
+
+  $X_{AW} + X_{AJ} + X_{AP} \leq 600K$
+
+  $X_{BW} + X_{BJ} + X_{BP} \leq 2,400K$
+
+- **Total production of each product type** should be less than or equal to the demand for it:
+
+  $X_{AW} + X_{BW} \leq 18 \times 800K = 14,400K$
+
+  $X_{AJ} + X_{BJ} \leq 20 \times 50K = 1,000K$
+
+  $X_{AP} + X_{BP} \leq 25 \times 80K = 2,000K$
+
+- **Weighted average of quality points** for each tomato product should be greater than or equal to the quality requirement for it:
+
+  $9 \times X_{AW} + 5 \times X_{BW} \geq 8 \times (X_{AW} + X_{BW})$
+
+  $9 \times X_{AJ} + 5 \times X_{BJ} \geq 6 \times (X_{AJ} + X_{BJ})$
+
+  $9 \times X_{AP} + 5 \times X_{BP} \geq 5 \times (X_{AP} + X_{BP})$
+
+- **Production must be nonnegative**:
+
+  $X_{AW}, X_{AJ}, X_{AP}, X_{BW}, X_{BJ}, X_{BP} \geq 0$
