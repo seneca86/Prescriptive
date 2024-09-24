@@ -122,10 +122,63 @@ Scenario analysis helps organizations make informed decisions by considering a r
 
 ## Application to the case
 
+### Accurate forecasts
+
 Let's work with a small variation on the actual case:
 
-Suppose today is May 1st. RBC has to determine how much tomato crop to purchase first and then allocates Grade A and B tomatoes across tomato products for next year
-Fruit costs per pound are 18 cents
+Suppose today is May 1st, so RBC has to determine how much tomato crop to purchase first and then allocates Grade A and B tomatoes across tomato products for next year. Fruit costs per pound are 18 cents
 
 Everything else is the same but the demand can be either high or low
+
+| Scenario | Probability | Whole Tomato (lbs) | Tomato Juice (lbs) | Tomato Paste (lbs) |
+|----------|-------------|--------------------|--------------------|--------------------|
+| High     | 80%         | 14,400K            | 1,000K             | 2,000K             |
+| Low      | 20%         | 600K               | 500K               | 1,000K             |
+
+Let's start with the high demand scenario. We need to make a few adjustments in our model:
+
+* We need to maximize profit, not just total contribution
+* The profit now depends on the total production
+* The total production has become a decision variable
+
+With that in mind, we can adjust and rerun out model:
+
+![High demand scenario](pictures/high_demand.png)
+
+We can then proceed with the low demand scenario, which is identical in construction and changes only in the values of the demand constraints.
+
+![Low demand scenario](pictures/low_demand.png)
+
+### Underforecast or overforecast
+
+What happens when we err in our forecast? There are two types of mistakes we can make.
+
+First, let's assume that the order for tomato crop is determined assuming the demand state will be high, but the actual demand state turns out to be low, i.e. we overestimate demand.
+
+* The total production becomes "fixed" by the time we can optimize, so it is no longer a decision variable
+* The demand constraint needs to be updates
+* We can still optimize the allocation of tomatoes into _whole_, _juice_, and _paste_
+
+As we see in the picture, despite still having some room to manoeuver we cannot avoid losses.
+
+![High demand overestimate](pictures/high_demand_overestimate.png)
+
+The other type of mistake we can make is to order tomatoes assuming low demand, and then discovering that the demand is actually high.
+
+After updating our model analogously we arrive to the results in the figure below.
+
+![Low demand underestimate](pictures/low_demand_underestimate.png)
+
+### Summary of scenarios
+
+In conclusion, we have four scenarios, two in which we accurately predict demand and two in which we don't. This is illustrated in the table below:
+
+| Decision           | Tomato Crop       | Profit High (80%)  | Profit Low (20%)  |
+|--------------------|-------------------|--------------------|-------------------|
+| Optimal for High   | 3,636,364          | $144,636            | -$185,345          |
+| Optimal for Low    | 1,818,182          | $88,485             | $72,318            |
+
+### Maximizing average profit
+
+Based on the learnings from the last section, we may want to be cautious and maximize for the whole instead of relying in our forecast abilities. To do that, we can run our optimizer taking into consideration the weighted probability of both scenarios simultaneously.
 
