@@ -173,12 +173,21 @@ After updating our model analogously we arrive to the results in the figure belo
 
 In conclusion, we have four scenarios, two in which we accurately predict demand and two in which we don't. This is illustrated in the table below:
 
-| Decision           | Tomato Crop       | Profit High (80%)  | Profit Low (20%)  |
-|--------------------|-------------------|--------------------|-------------------|
-| Optimal for High   | 3,636,364          | $144,636            | -$185,345          |
-| Optimal for Low    | 1,818,182          | $88,485             | $72,318            |
+| Decision | Tomato Crop | Profit High (80%) | Profit Low (20%)  |
+|----------|-------------|-------------------|-------------------|
+| Optimal for High | 3,636,364 | $144,636 | -$185,345 |
+| Optimal for Low | 1,818,182 | $88,485 | $72,318 |
 
 ### Maximizing average profit
 
 Based on the learnings from the last section, we may want to be cautious and maximize for the whole instead of relying in our forecast abilities. To do that, we can run our optimizer taking into consideration the weighted probability of both scenarios simultaneously.
 
+The model will now include the decision variables in both scenarios, as well as the constraints in both scenarios. The total crop will be common, and the profit will be the expected value of the profit in both scenarios.
+
+![Expected value optimization](pictures/expected_value_optimization.png)
+
+| Decision | Tomato Crop | Profit High (80%) | Profit Low (20%)  |
+|----------|-------------|-------------------|-----------------|
+| Optimal for High | 3,636,364 | $144,636 | -$185,345 |
+| Optimal for Low | 1,818,182 | $88,485  | $72,318 |
+| Optimal for Expected Value | 2,727,272 | $132,727 | -$31,439 |
