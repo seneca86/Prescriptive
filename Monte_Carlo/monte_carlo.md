@@ -32,6 +32,7 @@ Click **Start Simulation** in @RISK to run Monte Carlo simulations using random 
 ### 3. Analyze Results
 
 After the simulation, @RISK provides:
+
 - **Histograms**: Showing the range of potential outcomes.
 
 - **Statistics**: Key metrics such as mean, median, standard deviation, and percentiles.
