@@ -224,26 +224,38 @@ With `@RISK` we can define this CDF in Excel as follows:
 
 We need to select which cell we want to consider as output for visualization and analysis purposes.
 
-![Setting the output](pictures/define_output.png)
+![Definition of the output](pictures/define_output.png)
 
 In sum, three of the cells in our model include an `=RISK()` expression.
 
-![Setting the output](pictures/layout_including_output.png)
+![Layout of the output cells](pictures/layout_including_output.png)
 
 ### Running the simulation
 
-![Setting the output](pictures/run_simulation.png)
+[See figures]
 
-![Setting the output](pictures/output_distribution.png)
+![Running the simulation](pictures/run_simulation.png)
 
-![Setting the output](pictures/output_cdf.png)
+![Output distribution](pictures/output_distribution.png)
+
+![Output CDF](pictures/output_cdf.png)
 
 ## Production alternatives
 
 In the case, three different people have three different approaches to the production decision. How these approaches will fare will depend on the demand and the proportion of super toys. In order to have an holistic assessment, we can run the simulation for the three approaches plus our original "optimized" approach. Let's take a look at the results.
 
-![Setting the output](pictures/layout_four_approaches.png)
+![The four approaches](pictures/layout_four_approaches.png)
 
-![Setting the output](pictures/sales_output.png)
+![Field sales output](pictures/sales_output.png)
 
-![Setting the output](pictures/sales_cdf.png)
+![Field sales CDF](pictures/sales_cdf.png)
+
+![Production manager output](pictures/production_manager_output.png)
+
+![Production manager CDF](pictures/production_manager_cdf.png)
+
+![Gassman output](pictures/gassman_output.png)
+
+![Gassman CDF](pictures/gassman_cdf.png)
+
+![Comparison of output distributions](pictures/distribution_comparison.png)
