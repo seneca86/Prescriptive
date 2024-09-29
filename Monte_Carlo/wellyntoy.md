@@ -164,7 +164,9 @@ Data tables are a fantastic tool to deal with uncertainty in one or two variable
 
 In order to answer this question we need to think of the uncertainties as random variables.
 
-# Modelling the Demand as a Random Variable
+## `@RISK`
+
+### Modelling the Demand as a Random Variable
 
 The cumulative distribution function of the demand is defined in the case as follows:
 
@@ -175,8 +177,6 @@ The cumulative distribution function of the demand is defined in the case as fol
 - **maximum**: 300,000
 
 We can rephrase in mathematical terms as follows:
-
-*Cumulative Probability Distribution*
 
 | Percentile    | Demand    |
 |---------------|-----------|
@@ -194,4 +194,56 @@ With `@RISK` we can define this CDF in Excel as follows:
 
 ![Define the distribution](pictures/define_distribution.png)
 
+![Cumulative distribution for proportion of super](pictures/cdf_demand.png)
+
+### Modelling the proportion of super as a random variable
+
+The cumulative distribution function of the proportion of super is defined in the case as follows:
+
+* *50-50* chance of 40% demand for Super model
+* *maximum*: 60%
+* *minimum*: 30%
+* *75%* chance less than 45%
+* *25%* chance less than 36%
+
+| Percentile    | Proportion of super    |
+|---------------|-----------|
+| 0% (minimum)  | 30% |
+| 25% percentile| 36% |
+| 50% (median)  | 40% |
+| 75% percentile| 45% |
+| 100% (maximum)| 60% |
+
+With `@RISK` we can define this CDF in Excel as follows:
+
+`=RiskCumul(0.3,0.6,{0.36,0.4,0.45},{0.25,0.5,0.75})`
+
 ![Cumulative distribution for proportion of super](pictures/cdf_proportion.png)
+
+### Modelling the output
+
+We need to select which cell we want to consider as output for visualization and analysis purposes.
+
+![Setting the output](pictures/define_output.png)
+
+In sum, three of the cells in our model include an `=RISK()` expression.
+
+![Setting the output](pictures/layout_including_output.png)
+
+### Running the simulation
+
+![Setting the output](pictures/run_simulation.png)
+
+![Setting the output](pictures/output_distribution.png)
+
+![Setting the output](pictures/output_cdf.png)
+
+## Production alternatives
+
+In the case, three different people have three different approaches to the production decision. How these approaches will fare will depend on the demand and the proportion of super toys. In order to have an holistic assessment, we can run the simulation for the three approaches plus our original "optimized" approach. Let's take a look at the results.
+
+![Setting the output](pictures/layout_four_approaches.png)
+
+![Setting the output](pictures/sales_output.png)
+
+![Setting the output](pictures/sales_cdf.png)
