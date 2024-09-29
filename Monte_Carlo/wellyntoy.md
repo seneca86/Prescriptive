@@ -21,7 +21,7 @@ Different in size and finish
 
 * Wellyntoy plans for 2010 learning from 2009
 
-### Numbers from 2009:
+### Situation for 2009:
 
 * Tooling capacity: 150,000 units (£50,000)
 * Order quantity: 33,000 standard and 19,000 super
@@ -137,7 +137,61 @@ We can assess the impact of different demand scenarios while keep the optimizati
 
 We can explore what would happen if the share of "super" and the total demand changed in an orthogonal way. For that, we will build an Excel data table:
 
-
 ![Data table](pictures/data_table.png)
 
 ![Contour plot setup](pictures/contour.png)
+
+Data tables are a fantastic tool to deal with uncertainty in one or two variables, so it is strongly recommended that you spend time getting familiar with them.
+
+### Production Alternatives
+
+- **Field Sales Representative**
+  - Want to sell more because the wage is commission-based
+  - Standard: 130,000 units
+  - Super: 95,000 units
+
+- **Production Manager**
+  - Realistic and sometimes pessimistic
+  - Standard: 80,000 units
+  - Super: 70,000 units
+
+- **Product Manager (Gassman)**
+  - Compromise in the middle
+  - Standard: 115,000 units
+  - Super: 85,000 units
+
+- **Which alternative is better?**
+
+In order to answer this question we need to think of the uncertainties as random variables.
+
+# Modelling the Demand as a Random Variable
+
+The cumulative distribution function of the demand is defined in the case as follows:
+
+- **expected**: 150,000
+- **minimum**: 50,000
+- **3 chances in 4** of demand being higher than 125,000
+- **1 chance in 4** of demand being higher than 190,000
+- **maximum**: 300,000
+
+We can rephrase in mathematical terms as follows:
+
+*Cumulative Probability Distribution*
+
+| Percentile    | Demand    |
+|---------------|-----------|
+| 0% (minimum)  | 50,000    |
+| 25% percentile| 125,000   |
+| 50% (median)  | 150,000   |
+| 75% percentile| 190,000   |
+| 100% (maximum)| 300,000   |
+
+With `@RISK` we can define this CDF in Excel as follows:
+
+`=RiskCumul(50K,300K,{125K,150K,190K},{0.25,0.5,0.75})`
+
+![Ribbon with @RISK](pictures/ribbon_risk.png)
+
+![Define the distribution](pictures/define_distribution.png)
+
+![Cumulative distribution for proportion of super](pictures/cdf_proportion.png)
