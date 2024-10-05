@@ -240,7 +240,7 @@ How many of which chips to produce in July?
 
 ### Solution
 
-[Insert Excel layout](pictures/model_layout.png)
+![Excel layout](pictures/model_layout.png)
 
 ### Sensitivity Analysis
 
@@ -248,4 +248,4 @@ How much is XMicron willing to pay to increase the demand for each product by on
 
 Shadow price indicates the change in the optimal value of the objective when the right side of a constraint changes by one unit
 
-[Insert sensitivity](pictures/sensitivity.png)
+![Sensitivity](pictures/sensitivity.png)
