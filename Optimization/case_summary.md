@@ -316,11 +316,11 @@ $\text{Contr}_{TP} = 222 \times (X_{AP} + X_{BP})$
 
   ## Using Excel Solver
 
-  ![Formulas](RBC_formulas.png)
+  ![Formulas](pictures/RBC_formulas.png)
 
-  ![Model in Open Solver](open_solver_model_RBC.png)
+  ![Model in Open Solver](pictures/open_solver_model_RBC.png)
 
-  ![Model in Open Solver](open_solver_model_window.png)
+  ![Model in Open Solver](pictures/open_solver_model_window.png)
 
   ## Summary of Solutions
 
@@ -404,11 +404,11 @@ $\Delta X_{AW}$, $\Delta X_{AJ}$, $\Delta X_{AP}$, $X_{AW}, X_{AJ}, X_{AP}, X_{B
 
 ### Using Excel Solver
 
-![Model with additional tomatoes](additional_tomatoes_model.png)
+![Model with additional tomatoes](pictures/additional_tomatoes_model.png)
 
-![Excel view of additional tomatoes](additional_tomatoes_excel.png)
+![Excel view of additional tomatoes](pictures/additional_tomatoes_excel.png)
 
-![Excel solution with additional tomatoes](additional_tomatoes_solution.png)
+![Excel solution with additional tomatoes](pictures/additional_tomatoes_solution.png)
 
 ### Summary of Solutions
 
